@@ -15,7 +15,7 @@ Simulate your own collision dataset using REANA and Snakemake
 
 <div class="hx:mb-12">
 {{< hextra/hero-subtitle >}}
-Learn to run a CMS data processing workflow and simulate your own dataset using CERN's REANA platform.[hugo-styles-template](https://github.com/oer-particle-physics/hugo-styles-template),&nbsp;
+Learn to run a CMS data processing workflow and simulate your own dataset using CERN's REANA platform.
 <br class="hx:lg:block hx:hidden" />
 {{< /hextra/hero-subtitle >}}
 </div>
