@@ -46,19 +46,6 @@ For the workflow to access and write files to EOS, `Kerberos` authentication is 
 cern-get-keytab --keytab ~/.keytab --user --login johndoe
 ```
 
-Test `keytab` with:
-```console
-$ kdestroy; kinit -kt ~/.keytab johndoe; klist
-Ticket cache: FILE:/tmp/krb5cc_1234_5678
-Default principal: johndoe@CERN.CH
-
-Valid starting       Expires              Service principal
-07/05/2023 18:04:13  07/06/2023 19:04:13  krbtgt/CERN.CH@CERN.CH
-        renew until 07/10/2023 18:04:13
-07/05/2023 18:04:13  07/06/2023 19:04:13  afs/cern.ch@CERN.CH
-        renew until 07/10/2023 18:04:13
-```
-
 ### Uploading secrets
 
 After getting the working `keytab` file, upload your CERN username and `keytab` secrets to REANA with:
