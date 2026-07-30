@@ -1,5 +1,5 @@
 +++
-title = "Hugo Styles"
+title = "REANA Full Simulation Workflow Tutorial"
 layout = "hextra-home"
 +++
 
