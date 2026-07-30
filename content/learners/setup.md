@@ -7,7 +7,6 @@ weight = 10
 
 To get started, assuming a CERN account, the `lxplus` environment is accessed through `ssh`
 
-{{< tabs >}}
 ```
 # replace johndoe with your account username
 ssh johndoe@lxplus.cern.ch
