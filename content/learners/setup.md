@@ -3,83 +3,43 @@ title = "Setup"
 weight = 10
 +++
 
-Use this page for installation steps, platform notes, or entry checks that do not belong in the narrative flow of an episode.
+## Terminal Setup
 
-For OS-specific instructions, prefer Hugo-native tabs over large walls of repeated setup text. `hugo-styles` enables Hextra's synced tabs by default, so repeated choices like `macOS`, `Linux`, and `Windows` stay aligned across a page.
-
-## Operating system setup
+To get started, assuming a CERN account, the `lxplus` environment is accessed through `ssh`
 
 {{< tabs >}}
-{{< tab name="macOS" selected=true >}}
-```bash
-brew install hugo go
+```
+# replace johndoe with your account username
+ssh johndoe@lxplus.cern.ch
 ```
 
-Use Homebrew when you want a quick local setup for lesson authoring.
-{{< /tab >}}
-{{< tab name="Linux" >}}
-```bash
-sudo apt update
-sudo apt install hugo golang
+When prompted enter your `lxplus` password, the terminal won't show the password for security reasons.
+
+## REANA
+
+This workflow utilizes the REANA computing clusters, to run a workflow using them, a REANA access token and the activation of `reana-client` is needed. Follow **only** the `First Example` to get setup and verify that it's working, then return to continue the workflow setup. 
+
+[Setup REANA](https://docs.reana.io/getting-started/first-example/)
+
+After finishing the `First Example` tutorial, return to the home directory through
+
+```
+cd ~
 ```
 
-Package names vary slightly by distribution, so note that in downstream lessons when needed.
-{{< /tab >}}
-{{< tab name="Windows" >}}
-```powershell
-winget install Hugo.Hugo.Extended
-winget install GoLang.Go
+To avoid going through all the steps of activating the `reana-client` everytime you access lxplus, a small script can be used, **be sure to replace `xxxxxxxxxxxxxxxxxxx` with your own `REANA Access Token`** and copy the following into your terminal:
+
+```
+cat << 'EOF' > ~/private/reana-env-prod.sh
+#!/bin/bash
+source /afs/cern.ch/user/r/reana/public/reana-qa/bin/activate
+export REANA_SERVER_URL=https://reana-qa.cern.ch
+export REANA_ACCESS_TOKEN=xxxxxxxxxxxxxxxxxxx
+EOF
 ```
 
-If your learners use corporate-managed machines, add a short note about alternate installation paths.
-{{< /tab >}}
-{{< /tabs >}}
+Now to activate the `reana-client` environment whenever needed, simply run:
 
-## Shell profile commands
-
-Because tab syncing is enabled by default, the shell choice below will stay in sync with the next shell tab group on this page.
-
-{{< tabs >}}
-{{< tab name="bash" selected=true >}}
-```bash
-echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
-source ~/.bashrc
 ```
-{{< /tab >}}
-{{< tab name="zsh" >}}
-```zsh
-echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
-source ~/.zshrc
+source ~/private/reana-env-prod.sh
 ```
-{{< /tab >}}
-{{< tab name="fish" >}}
-```fish
-fish_add_path $HOME/.local/bin
-```
-{{< /tab >}}
-{{< /tabs >}}
-
-## Entry check
-
-{{< tabs >}}
-{{< tab name="bash" selected=true >}}
-```bash
-hugo version
-go version
-```
-{{< /tab >}}
-{{< tab name="zsh" >}}
-```zsh
-hugo version
-go version
-```
-{{< /tab >}}
-{{< tab name="fish" >}}
-```fish
-hugo version
-go version
-```
-{{< /tab >}}
-{{< /tabs >}}
-
-If the shell tabs stay aligned between the previous two sections, the synced-tab behavior is working as intended.
