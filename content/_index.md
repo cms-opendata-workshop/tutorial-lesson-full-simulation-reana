@@ -9,8 +9,7 @@ Workflow Repository {{< icon name="arrow-circle-right" attributes="height=14" >}
 
 <div class="hx:mt-6 hx:mb-6">
 {{< hextra/hero-headline >}}
-Simulate your own collision dataset&nbsp;
-<br class="hx:xl:block hx:hidden" />using REANA and Snakemake
+Simulate your own collision dataset using REANA and Snakemake
 {{< /hextra/hero-headline >}}
 </div>
 
