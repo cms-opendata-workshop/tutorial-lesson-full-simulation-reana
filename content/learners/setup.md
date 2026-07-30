@@ -38,8 +38,35 @@ source ~/private/reana-env-prod.sh
 ```
 ## Kerberos
 
-For the workflow to access and write files to EOS, `Kerberos` authentication is required. Follow the steps in the `Kerberos` activation **only until the `Uploading secrets`**, after successfully uploading the secrets **return to this tutorial**:
-[Kerberos Authentication](https://docs.reana.io/advanced-usage/access-control/kerberos/)
+For the workflow to access and write files to EOS, `Kerberos` authentication is required. [As instructed in the REANA docs] (https://docs.reana.io/advanced-usage/access-control/kerberos/), we'll start with generating the `keytab` file.
+
+### Generate keytab file
+```
+# replace johndoe with your CERN username
+cern-get-keytab --keytab ~/.keytab --user --login johndoe
+```
+
+Test `keytab` with:
+```console
+$ kdestroy; kinit -kt ~/.keytab johndoe; klist
+Ticket cache: FILE:/tmp/krb5cc_1234_5678
+Default principal: johndoe@CERN.CH
+
+Valid starting       Expires              Service principal
+07/05/2023 18:04:13  07/06/2023 19:04:13  krbtgt/CERN.CH@CERN.CH
+        renew until 07/10/2023 18:04:13
+07/05/2023 18:04:13  07/06/2023 19:04:13  afs/cern.ch@CERN.CH
+        renew until 07/10/2023 18:04:13
+```
+
+### Uploading secrets
+
+After getting the working `keytab` file, upload your CERN username and `keytab` secrets to REANA with:
+```
+reana-client secrets-add --env CERN_USER=johndoe \
+                           --env CERN_KEYTAB=.keytab \
+                           --file ~/.keytab
+```
 
 ## Next step 
 
