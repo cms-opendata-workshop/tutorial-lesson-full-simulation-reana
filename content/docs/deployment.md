@@ -1,0 +1,66 @@
++++
+title = "Deployment"
+weight = 60
++++
+
+`hugo-styles-template` is set up for GitHub Pages via GitHub Actions rather than a committed `gh-pages` branch.
+For hosting patterns beyond this shared setup, see [Hextra Deploy Site](https://imfing.github.io/hextra/docs/guide/deploy-site/).
+
+## Recommended deployment flow
+
+1. create the lesson repository from `hugo-styles-template`
+2. set `baseURL` in `hugo.toml` to `https://<account>.github.io/<repo>/`
+3. in GitHub, enable Pages and choose `GitHub Actions` as the source
+4. push the repository's default branch
+5. let the included workflow build and publish the site
+
+The included workflow deploys when a push targets the branch currently configured as the repository's default in GitHub.
+Pushes to other branches create a skipped deployment run, while pull requests still run the build and link checks.
+Enable Pages before the first push so that initial deploy run already has a configured publishing target.
+By default it publishes the default branch as `Latest`.
+Extra branch or tag builds come from the `params.versioning` block in `hugo.toml`.
+Keep `params.versioning.defaultBranch` aligned with the GitHub default branch for local versioned builds, and set
+`params.lesson.editBranch` to the same branch so that edit links target the expected content.
+Before the deploy artifact is built, the workflow also builds a local-root version of the site and runs `lychee`
+against the rendered HTML on both pull requests and pushes.
+In template-based lesson repositories, the top-level workflow files are thin managed wrappers that call synced reusable workflow files maintained in `hugo-styles`.
+
+## Local production build
+
+```bash
+python3 scripts/build-versioned-site.py
+```
+
+## Typical checks before publishing
+
+```bash
+go run github.com/oer-particle-physics/hugo-styles/cmd/hugo-styles-migrate@latest check .
+python3 scripts/build-versioned-site.py --use-current-checkout \
+  --base-url / --destination .cache/linkcheck-site --no-minify
+lychee --cache --config lychee.toml --no-progress --root-dir .cache/linkcheck-site '.cache/linkcheck-site/**/*.html'
+python3 scripts/build-versioned-site.py
+```
+
+The first build is a link-check-only artifact. It forces `baseURL` to `/` so `lychee` can validate internal links
+against local files while still checking external links over the network. The second build remains the real deploy
+artifact with the production Pages URL.
+If a link fails because the target has really moved or disappeared, fix the content. If a trusted upstream URL is
+known to fail automated checks for reasons outside your control, such as an invalid TLS chain, add a narrow entry
+to that lesson repository's `.lycheeignore` instead of enabling global insecure mode. Keep those exceptions exact
+and documented.
+
+## Why this uses Actions
+
+- it works for any static site generator Hugo can produce
+- it avoids the old branch-publishing coupling
+- it matches the shared-module update model more naturally
+
+The template repository includes the deployment and scheduled module-refresh workflows required for a typical lesson repository.
+The refresh workflow keeps the managed workflow files aligned with the pinned `hugo-styles` version.
+
+## Versioned lesson archives
+
+The shared workflow already knows how to build archived versions.
+The only thing you need to change is `params.versioning` in `hugo.toml`.
+
+See [Versioned Sites]({{< relref "/docs/versioned-sites" >}}) for branch/tag examples, wildcard matching, and the exact build helper behavior.
