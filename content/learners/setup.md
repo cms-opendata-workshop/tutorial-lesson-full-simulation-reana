@@ -38,7 +38,7 @@ source ~/private/reana-env-prod.sh
 ```
 ## Kerberos
 
-For the workflow to access and write files to EOS, `Kerberos` authentication is required. [As instructed in the REANA docs] (https://docs.reana.io/advanced-usage/access-control/kerberos/), we'll start with generating the `keytab` file.
+For the workflow to access and write files to EOS, `Kerberos` authentication is required. [As instructed in the REANA docs](https://docs.reana.io/advanced-usage/access-control/kerberos/), we'll start with generating the `keytab` file.
 
 ### Generate keytab file
 ```
