@@ -3,36 +3,36 @@ title = "Hugo Styles"
 layout = "hextra-home"
 +++
 
-{{< hextra/hero-badge link="https://github.com/oer-particle-physics/hugo-styles-template" >}}
-Starter template {{< icon name="arrow-circle-right" attributes="height=14" >}}
+{{< hextra/hero-badge link="https://github.com/cms-opendata-processing-tasks/FullSimulationReanaWorkflow" >}}
+Workflow Repository {{< icon name="arrow-circle-right" attributes="height=14" >}}
 {{< /hextra/hero-badge >}}
 
 <div class="hx:mt-6 hx:mb-6">
 {{< hextra/hero-headline >}}
-Build Carpentries-style lessons&nbsp;
-<br class="hx:xl:block hx:hidden" />with Hugo and Hextra
+Simulate your own collision dataset&nbsp;
+<br class="hx:xl:block hx:hidden" />using REANA and Snakemake
 {{< /hextra/hero-headline >}}
 </div>
 
 <div class="hx:mb-12">
 {{< hextra/hero-subtitle >}}
-Start new lesson repositories from [hugo-styles-template](https://github.com/oer-particle-physics/hugo-styles-template),&nbsp;
-<br class="hx:lg:block hx:hidden" />then use this site for the shared module docs, examples, migration help, and update guidance.
+Learn to run a CMS data processing workflow and simulate your own dataset using CERN's REANA platform.[hugo-styles-template](https://github.com/oer-particle-physics/hugo-styles-template),&nbsp;
+<br class="hx:lg:block hx:hidden" />
 {{< /hextra/hero-subtitle >}}
 </div>
 
 <div class="hx:mb-6">
-{{< hextra/hero-button text="Read Quickstart" link="docs/quickstart/" >}}
+{{< hextra/hero-button text="Get Started" link="learners/setup/" >}}
 </div>
 
 <div class="hx:mt-6"></div>
 
 {{< hextra/feature-grid cols="3" >}}
 {{< hextra/feature-card
-  title="Start a new lesson"
-  subtitle="Use the thin template repo for lesson content and branding, then come back here for the shared module docs."
+  title="Setup Environment"
+  subtitle="Get your environment setup to start using the workflow."
   icon="book-open"
-  link="https://github.com/oer-particle-physics/hugo-styles-template"
+  link="https://cms-opendata-workshop.github.io/tutorial-lesson-full-simulation-reana/learners/setup/"
   class="hx:min-h-[220px]"
 >}}
 {{< hextra/feature-card
