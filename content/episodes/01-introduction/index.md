@@ -14,7 +14,7 @@ This workflow was made so that users with access to CERN's REANA cluster can uti
 
 The workflow implements the [CMS Monte Carlo](https://opendata.cern.ch/docs/cms-mc-production-overview) steps, which follow the progression of generation (GEN), simulation (SIM) which includes the digi2raw, hlt and pat steps, and finally the reconstruction (RECO) and NANO steps.
 
-![CMS Monte Carlo Prodcution Overview](/static/fig/CMS_Monte_Carlo_Overview.png)
+![CMS Monte Carlo Prodcution Overview](fig/CMS_Monte_Carlo_Overview.png)
 
 You can find the implementation on [Github](https://github.com/cms-opendata-processing-tasks/FullSimulationReanaWorkflow).
 
