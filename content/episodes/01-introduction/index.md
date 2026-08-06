@@ -1,5 +1,5 @@
 +++
-title = "Designing a Hugo-first lesson"
+title = "Introduction"
 weight = 10
 teaching = 10
 exercises = 5
@@ -8,23 +8,33 @@ objectives = ["Identify the teaching features that matter more than the old impl
 keypoints = ["Preserve pedagogy and author ergonomics, not the historical implementation.", "A thin lesson repo plus a shared module gives a much cleaner update path."]
 +++
 
-The lesson infrastructure in this repository is intentionally split in two:
+This workflow was made so that users with access to CERN's REANA cluster can utilize its computing backends to simulate their own collision dataset. The tutorial will walk you through the steps of using the workflow to simulate the dataset you need.
 
-- a **shared module** that owns the reusable lesson system
-- a **starter template** that stays light and project-specific
+## Workflow Steps
 
-That means people can keep their tutorials current without copying framework files across repositories.
-If you are starting a real lesson, begin with
-[`hugo-styles-template`](https://github.com/oer-particle-physics/hugo-styles-template)
-and treat the pages in this section as examples of supported behavior.
+The workflow implements the [CMS Monte Carlo](https://opendata.cern.ch/docs/cms-mc-production-overview) steps, which follow the progression of generation (GEN), simulation (SIM) which includes the digi2raw, hlt and pat steps, and finally the reconstruction (RECO) and NANO steps.
 
-{{< callout type="prereq" title="Who this is for" >}}
-This stack is aimed at lesson authors who want Carpentries-style pedagogy in a Hugo-native workflow.
-{{< /callout >}}
+![CMS Monte Carlo Prodcution Overview](/static/fig/CMS_Monte_Carlo_Overview.png)
 
-The module keeps the teaching model front and centre. For example, we can link directly to {{< glossary formative-assessment >}} practices and connect activities to a target learner profile such as {{< profile workshop-host >}}.
+You can find the implementation on [Github](https://github.com/cms-opendata-processing-tasks/FullSimulationReanaWorkflow).
 
-![An example lesson map that connects content, facilitation, and update flow.](fig/lesson-flow.svg)
+
+## Tools 
+
+The workflow utilizes Snakemake as the tool that maps out the workflow, it has defined rules for each step where 
+it then maps out the workflow and submits the jobs to REANA, where it then takes the mapped out workflow and runs it on the available cluster nodes.
+
+## Parameters
+
+All you have to do is define specific parameters in the `reana.yaml` for your use case and then run the workflow:
+
+- `record_id` - the record id of the dataset you want to simulate
+
+- `events` - the total number of events you want to simulate
+
+- `eventsPerJob` - the number of events each job will run
+
+- `eos_outdir` - the path of the folder you want the final root files and plots to be saved at
 
 {{< learner >}}
 As you read the example lesson, look for the places where metadata becomes visible structure: questions, objectives, key points, and active-learning prompts.
