@@ -3,8 +3,8 @@ title = "Introduction"
 weight = 10
 teaching = 10
 exercises = 5
-questions = ["What should a modern lesson template preserve from the old Carpentries stack?"]
-objectives = ["Identify the teaching features that matter more than the old implementation details.", "Recognise which pieces should live in a shared module versus in a lesson repository."]
+questions = ["What does the workflow simulate?"]
+objectives = ["Understand what the workflow simulates and how you can simulate your own dataset."]
 keypoints = ["Preserve pedagogy and author ergonomics, not the historical implementation.", "A thin lesson repo plus a shared module gives a much cleaner update path."]
 +++
 
@@ -35,11 +35,3 @@ All you have to do is define specific parameters in the `reana.yaml` for your us
 - `eventsPerJob` - the number of events each job will run
 
 - `eos_outdir` - the path of the folder you want the final root files and plots to be saved at
-
-{{< learner >}}
-As you read the example lesson, look for the places where metadata becomes visible structure: questions, objectives, key points, and active-learning prompts.
-{{< /learner >}}
-
-{{< instructor >}}
-This first episode is a good place to explain the module/template split before diving into syntax. Learners usually care less about the build system than maintainers do.
-{{< /instructor >}}
