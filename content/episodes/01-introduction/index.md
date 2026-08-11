@@ -5,6 +5,7 @@ teaching = 10
 exercises = 5
 questions = ["What does the workflow simulate?"]
 objectives = ["Understand what the workflow simulates and how you can simulate your own dataset."]
+keypoints = ["The workflow simulates the CMS Monte Carlo steps", "The user only has to define specific parameters and then run the workflow."]
 +++
 
 This workflow was made so that users with access to CERN's REANA cluster can utilize its computing backends to simulate their own collision dataset. The tutorial will walk you through the steps of using the workflow to simulate the dataset you need.
