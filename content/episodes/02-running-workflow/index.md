@@ -1,14 +1,16 @@
 +++
-title = "Running the workflow"
+title = "Running the Workflow"
 weight = 20
 teaching = 15
 exercises = 10
 questions = ["What are the steps to running the workflow?"]
-objectives = ["Learn to simulate the dataset you need."]
-keypoints = ["Challenge blocks should be easy to read in source form and easy to scan on the page.", "Hints and solutions should stay collapsible but also support bulk expansion in the all-in-one page."]
+objectives = ["Learn to run the workflow and simulate the dataset you need."]
+keypoints = ["Where and how to set the parameters to fit your use case."]
 +++
 
 ## Setting your parameters
+
+All the parameters you need to specify are located in the `reana.yaml` file at the root of your directory.
 
 ### 1- Record ID 
 
@@ -21,4 +23,32 @@ Copy the `record ID` and place it in the `reana.yaml` file under the `parameters
   parameters:
     # Provide the record ID of the dataset you want to simulate
     record_id: 12345
+```
+
+### 2- Events & Events Per Job
+
+You'll need to provide the number of total events you want to simulate, and the number of events to provide each job. To calculate the total number of jobs you'll have simply:
+
+$$\dfrac{\text{\# of events}}{\text{\# of events per job}} = \text{\# of jobs}$$
+
+With a higher number of events per job, there will be less total jobs but each job will take longer to run and the maximum number of events per job is 1600 to avoid artificial duplication during the simulation. 
+
+If you provide a fewer number of events per job, each job will finish more quickly, however you'll have more total jobs and that'll be limited by how many jobs the REANA cluster can run at a time.
+
+These parameters can be specified in the `reana.yaml` file under the parameters sections
+```
+  # Provide the number of events you want the workflow to simulate
+  events: 2
+  # Provide the number events you want assigned to each job
+  eventsPerJob: 1
+```
+
+You'll have to find the balance that works for your case, the next episode will provide the time and storage benchmarks of the workflow to help you understand how long it'll take and how much storage you'll need.
+
+### 3- EOS 
+
+The final root files, plots, metrics, etc. will all be stored in the `EOS` directory you specify. Assuming you want to store in your own personal `EOS` directory, the format will be `/eos/user/first_letter_of_first_name/cern_username/project_name`. For example assuming the user "John Doe" wants to store the results in his project directory name "my_project", just change the `eos_outdir` field name in the `reana.yaml`:
+```
+  # Provide the eos_outdir you want the results to be stored in
+  eos_dir: "/eos/user/j/johndoe/my_project"
 ```
