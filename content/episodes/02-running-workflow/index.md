@@ -49,7 +49,7 @@ You'll have to find the balance that works for your case, the next episode will 
 
 The final root files, plots, metrics, etc. will all be stored in the `EOS` directory you specify. Assuming you want to store in your own personal `EOS` directory, the format will be `/eos/user/first_letter_of_first_name/cern_username/project_name`. 
 
-For example assuming the user "John Doe" wants to store the results in his project directory name "my_project", just change the `eos_outdir` field name in the `reana.yaml`:
+For example assuming the user "John Doe" wants to store the results in his project directory named "my_project", just change the `eos_outdir` field name in the `reana.yaml`:
 ```
   # Provide the eos_outdir you want the results to be stored in
   eos_dir: "/eos/user/j/johndoe/my_project"
