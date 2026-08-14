@@ -8,7 +8,7 @@ objectives = ["Learn to run the workflow and simulate the dataset you need."]
 keypoints = ["Where and how to set the parameters to fit your use case."]
 +++
 
-## Setting your parameters
+## Setting your Parameters
 
 All the parameters you need to specify are located in the `reana.yaml` file at the root of your directory.
 
@@ -47,8 +47,12 @@ You'll have to find the balance that works for your case, the next episode will 
 
 ### 3- EOS 
 
-The final root files, plots, metrics, etc. will all be stored in the `EOS` directory you specify. Assuming you want to store in your own personal `EOS` directory, the format will be `/eos/user/first_letter_of_first_name/cern_username/project_name`. For example assuming the user "John Doe" wants to store the results in his project directory name "my_project", just change the `eos_outdir` field name in the `reana.yaml`:
+The final root files, plots, metrics, etc. will all be stored in the `EOS` directory you specify. Assuming you want to store in your own personal `EOS` directory, the format will be `/eos/user/first_letter_of_first_name/cern_username/project_name`. 
+
+For example assuming the user "John Doe" wants to store the results in his project directory name "my_project", just change the `eos_outdir` field name in the `reana.yaml`:
 ```
   # Provide the eos_outdir you want the results to be stored in
   eos_dir: "/eos/user/j/johndoe/my_project"
 ```
+
+## 
