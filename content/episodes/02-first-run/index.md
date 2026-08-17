@@ -1,16 +1,40 @@
 +++
-title = "Running the Workflow"
+title = "First Run"
 weight = 20
 teaching = 15
 exercises = 10
-questions = ["What are the steps to running the workflow?"]
+questions = ["How to get the workflow locally?", "What are the steps to running the workflow?"]
 objectives = ["Learn to run the workflow and simulate the dataset you need."]
 keypoints = ["Where and how to set the parameters to fit your use case."]
 +++
 
+
+## Get the Workflow
+
+The code to run the simulation workflow will not utilize your local device's resources, but the workflow itself will 
+be started from your device.
+
+### Pull the Code
+
+On your `lxplus` terminal or working environment of choice, make sure that your current working directory is where you want to have the code stored. If you're unsure, then simply store it at your home directory. To get there just run.
+```
+cd ~
+```
+
+Then you can pull the workflow code by running
+```
+git clone https://github.com/cms-opendata-processing-tasks/FullSimulationReanaWorkflow.git
+```
+
+This will create a directory name `FullSimulationReanaWorkflow`, enter the directory by simply running
+```
+cd FullSimulationReanaWorkflow
+```
+
 ## Setting your Parameters
 
-All the parameters you need to specify are located in the `reana.yaml` file at the root of your directory.
+All the parameters you need to specify are located in the `reana.yaml` file at the root of your directory. Choose the 
+approach you prefer to edit the file itself. 
 
 ### 1- Record ID 
 
@@ -54,5 +78,3 @@ For example assuming the user "John Doe" wants to store the results in his proje
   # Provide the eos_outdir you want the results to be stored in
   eos_dir: "/eos/user/j/johndoe/my_project"
 ```
-
-## 
