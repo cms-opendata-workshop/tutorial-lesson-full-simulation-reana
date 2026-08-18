@@ -59,8 +59,8 @@ and rendered-link suite from [hugo-styles Maintenance]({{< relref "/docs/hugo-st
 
 ## Live lesson examples
 
-- [Designing a Hugo-first lesson]({{< relref "/episodes/01-introduction" >}})
-- [Using challenge and solution blocks]({{< relref "/episodes/02-first-run" >}})
+- [Introduction]({{< relref "/episodes/01-introduction" >}})
+- [First Run]({{< relref "/episodes/02-first-run" >}})
 - [Setup choices, profiles, and native embeds]({{< relref "/episodes/03-setup-choices" >}})
 - [Physics notation, diagrams, and richer docs]({{< relref "/episodes/04-physics-doc-features" >}})
 - [Learner setup page]({{< relref "/learners/setup" >}})
