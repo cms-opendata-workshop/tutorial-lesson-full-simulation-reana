@@ -13,7 +13,7 @@ ssh johndoe@lxplus.cern.ch
 When prompted enter your `lxplus` password, the terminal won't show the password for security reasons.
 ## REANA
 
-This workflow utilizes the REANA computing clusters, to run a workflow using them, a REANA access token and the activation of `reana-client` is needed. Follow **only** the `First Example` to get setup and verify that it's working, then return to this tutorial. 
+This workflow utilizes the [REANA](https://docs.reana.io/) computing clusters, to run a workflow using them, a REANA access token and the activation of `reana-client` is needed. Follow **only** the `First Example` to get setup and verify that it's working, then return to this tutorial. 
 
 [Setup REANA](https://docs.reana.io/getting-started/first-example/)
 
@@ -48,7 +48,7 @@ cern-get-keytab --keytab ~/.keytab --user --login johndoe
 
 ### Uploading secrets
 
-After getting the working `keytab` file, upload your CERN username and `keytab` secrets to REANA with:
+After getting the working `keytab` file, upload your CERN username and `keytab` "secrets" to REANA with:
 ```
 reana-client secrets-add --env CERN_USER=johndoe \
                            --env CERN_KEYTAB=.keytab \
