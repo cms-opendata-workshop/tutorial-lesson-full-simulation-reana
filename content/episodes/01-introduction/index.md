@@ -3,12 +3,16 @@ title = "Introduction"
 weight = 10
 teaching = 10
 exercises = 5
-questions = ["What does the workflow simulate?"]
-objectives = ["Understand what the workflow simulates and how you can simulate your own dataset."]
-keypoints = ["The workflow simulates the CMS Monte Carlo steps", "The user only has to define specific parameters and then run the workflow."]
+questions = ["Who is this workflow for?", "What does the workflow simulate?", "How does the workflow work?"]
+objectives = ["Understand if this is a worfklow you can use.", "Understand what the workflow does.", ""]
+keypoints = ["Those with access to CERN resources can use the workflow to data simulation.", "The workflow simulates the CMS Monte Carlo steps.", "Snakemake maps out the workflow while REANA runs the simulation."]
 +++
 
-This workflow was made so that users with access to CERN's REANA cluster can utilize its computing backends to simulate their own collision dataset. The tutorial will walk you through the steps of using the workflow to simulate the dataset you need.
+## Is the Workflow for You?
+
+This workflow was made so that users with access to CERN's REANA cluster can utilize its computing backends to simulate their own collision dataset or attempt to reproduce and existing dataset. The tutorial will walk you through the steps of using the workflow to simulate the dataset you need.
+
+Only continue if you have set up the evironment needed for the tutorial. If not then go back to [Setup]({{< relref "/learners/setup.md" >}}).
 
 ## Workflow Steps
 
@@ -21,17 +25,7 @@ You can find the implementation on [Github](https://github.com/cms-opendata-proc
 
 ## Tools 
 
-The workflow utilizes Snakemake as the tool that maps out the workflow, it has defined rules for each step where 
-it then maps out the workflow and submits the jobs to REANA, where it then takes the mapped out workflow and runs it on the available cluster nodes.
+The workflow utilizes [Snakemake](https://snakemake.readthedocs.io/en/stable/) as the tool that maps out the workflow,
+with defined rules showing each steps input and output requirements. It then builds a Directed Acyclic Graph (DAG) of the jobs to have the workflow planned out and then that plan is sent to REANA.
 
-## Parameters
-
-All you have to do is define specific parameters in the `reana.yaml` for your use case and then run the workflow:
-
-- `record_id` - the record id of the dataset you want to simulate
-
-- `events` - the total number of events you want to simulate
-
-- `eventsPerJob` - the number of events each job will run
-
-- `eos_outdir` - the path of the folder you want the final root files and plots to be saved at
+REANA recieves the workflow plan and assign jobs to the available cluster nodes, while keeping the order specified by the DAG.
