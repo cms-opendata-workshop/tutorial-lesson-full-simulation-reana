@@ -20,7 +20,7 @@ The workflow implements the [CMS Monte Carlo](https://opendata.cern.ch/docs/cms-
 
 ![CMS Monte Carlo Prodcution Overview](fig/CMS_Monte_Carlo_Overview.png)
 
-You can find the implementation on [Github](https://github.com/cms-opendata-processing-tasks/FullSimulationReanaWorkflow).
+Each step of the workflow requires its own environment for processing. Which is why the workflow parses the CMSSW environment of the step from its metadata utilizing releases and tags specific to the dataset. You can find the implementation on [Github](https://github.com/cms-opendata-processing-tasks/FullSimulationReanaWorkflow).
 
 
 ## Tools 
