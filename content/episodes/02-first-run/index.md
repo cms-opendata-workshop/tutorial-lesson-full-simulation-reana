@@ -104,7 +104,7 @@ To create our first test worfklow, run
 reana-client run -w workflow_name
 ```
 
-You can follow the progress of workflow on [reana.cern.ch](https://reana.cern.ch) or you can check it via the termnial using
+You can follow the progress of the workflow on [reana.cern.ch](https://reana.cern.ch) or you can check it via the termnial using
 ```
 reana-client status -w workflow_name
 ```
