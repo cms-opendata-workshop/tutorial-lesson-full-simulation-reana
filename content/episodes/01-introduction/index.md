@@ -4,7 +4,7 @@ weight = 10
 teaching = 10
 exercises = 5
 questions = ["Who is this workflow for?", "What does the workflow simulate?", "How does the workflow work?"]
-objectives = ["Understand if this is a worfklow you can use.", "Understand what the workflow does.", ""]
+objectives = ["Understand if this is a worfklow you can use.", "Understand what the workflow does.", "Know what tools are used."]
 keypoints = ["Those with access to CERN resources can use the workflow to data simulation.", "The workflow simulates the CMS Monte Carlo steps.", "Snakemake maps out the workflow while REANA runs the simulation."]
 +++
 
