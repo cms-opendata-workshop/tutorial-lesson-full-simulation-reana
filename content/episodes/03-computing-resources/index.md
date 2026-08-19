@@ -12,7 +12,7 @@ keypoints = ["The workflow scale requirements scale linearly with enough jobs av
 
 ## Time & Storage
 
-As mentioned in the [first run]({{ < relref "/episodes/02-first-run/index.md" > }}) episode, the simulation time will depend on the **total number of events** as well as the **number of events per job**. 
+As mentioned in the first run [episode]({{< relref "/episodes/02-first-run/index.md" >}}), the simulation time will depend on the **total number of events** as well as the **number of events per job**. 
 
 For the storage requirements of the workflow, cleanup rules were implemented along the workflow to delete the intermediary root files of a rule after they have been successfully rule to save on the total storage needed. Therefore the peak storage needed is just where the intermediary root files are the largest, which is during the `DIGI2RAW` and `HLT` steps.
 
@@ -95,3 +95,5 @@ These metrics were measured mid-August 2026, with the workflow utilizing the REA
 `Peak Storage Usage` ~ 4.69 GBs
 
 `Final Storage Usage` ~ 0.5 GBs
+
+## 
