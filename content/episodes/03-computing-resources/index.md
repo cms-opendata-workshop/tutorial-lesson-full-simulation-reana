@@ -4,8 +4,8 @@ weight = 30
 teaching = 15
 exercises = 5
 questions = ["How much time and space will the simulation take?"]
-objectives = [""]
-keypoints = [""]
+objectives = ["Understand the time and space requirements of the workflow and how they scale."]
+keypoints = ["The workflow scale requirements scale linearly with enough jobs available."]
 [tabs]
   sync = false
 +++
