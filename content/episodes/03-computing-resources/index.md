@@ -96,4 +96,9 @@ These metrics were measured mid-August 2026, with the workflow utilizing the REA
 
 `Final Storage Usage` ~ 0.5 GBs
 
-## 
+## Variations
+
+Of course, these times can change for many reasons. If you end up with a worfklow run where the number of jobs 
+per step exceeds the number of available cluster nodes, that'll result in increased times as each step can't be fully parallelized at once. 
+
+There have been anomalies while testing the workflow, where a step and its subsequent steps take much longer than usual to run, however it has been quite rare.
