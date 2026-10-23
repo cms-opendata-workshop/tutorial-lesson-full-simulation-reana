@@ -62,7 +62,4 @@ and rendered-link suite from [hugo-styles Maintenance]({{< relref "/docs/hugo-st
 - [Introduction]({{< relref "/episodes/01-introduction" >}})
 - [First Run]({{< relref "/episodes/02-first-run" >}})
 - [Compute Resources]({{< relref "/episodes/03-computing-resources" >}})
-{{/*
-- [Production Run]({{< relref "/episodes/04-production-run" >}})
-*/}}
 - [Learner setup page]({{< relref "/learners/setup" >}})
