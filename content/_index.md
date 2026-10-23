@@ -35,17 +35,17 @@ Learn to run a CMS data processing workflow and simulate your own dataset using 
   class="hx:min-h-[220px]"
 >}}
 {{< hextra/feature-card
-  title="Feature tour"
-  subtitle="The local example pages exist to demonstrate shared lesson behavior, not to act as the recommended starter content for new repositories."
+  title="Reana Documentation"
+  subtitle="Learn more about REANA which is utilized by the workflow for its computing clusters."
   icon="academic-cap"
-  link="episodes/"
+  link="https://docs.reana.io/"
   class="hx:min-h-[220px]"
 >}}
 {{< hextra/feature-card
-  title="Further reading"
-  subtitle="Use the reference page for links to the upstream Hextra and Hugo documentation when you need theme-level or framework-level detail."
-  icon="sparkles"
-  link="reference/"
+  title="First Run"
+  subtitle="After setting up your environment, test out a first run of the workflow."
+  icon="chevron-double-right"
+  link="episodes/02-first-run"
   class="hx:min-h-[220px]"
 >}}
 {{< /hextra/feature-grid >}}
